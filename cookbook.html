@@ -1,115 +1,121 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>G-SHOCK Frontend Toolkit Cookbook</title>
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23454753'/%3E%3Crect x='12' y='16' width='40' height='32' rx='6' fill='%236BC3CF'/%3E%3Cpath d='M20 26h24M20 32h16M20 38h24' stroke='%23010504' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="./assets/css/toolkit.css" rel="stylesheet">
-  </head>
-  <body class="gs-body">
-    <nav class="navbar navbar-expand-lg sticky-top gs-nav" data-bs-theme="dark">
-      <div class="container py-2">
-        <a class="navbar-brand text-white gs-brand" href="./index.html">GS UI Toolkit</a>
-        <div class="navbar-nav ms-auto flex-row gap-3">
-          <a class="nav-link text-white-50" href="./index.html">Showcase</a>
-          <a class="nav-link text-white" href="./cookbook.html">Cookbook</a>
-        </div>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>G-SHOCK Frontend Toolkit Cookbook</title>
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23454753'/%3E%3Crect x='12' y='16' width='40' height='32' rx='6' fill='%236BC3CF'/%3E%3Cpath d='M20 26h24M20 32h16M20 38h24' stroke='%23010504' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="./assets/css/toolkit.css" rel="stylesheet">
+</head>
+
+<body class="gs-body">
+  <nav class="navbar navbar-expand-lg sticky-top gs-nav" data-bs-theme="dark">
+    <div class="container py-2">
+      <a class="navbar-brand text-white gs-brand" href="./index.html">GS UI Toolkit</a>
+      <div class="navbar-nav ms-auto flex-row gap-3">
+        <a class="nav-link text-white-50" href="./index.html">Showcase</a>
+        <a class="nav-link text-white" href="./cookbook.html">Cookbook</a>
       </div>
-    </nav>
+    </div>
+  </nav>
 
-    <main class="page-section">
-      <div class="container">
-        <section class="gs-shell p-4 p-lg-5 mb-4" data-animate>
-          <div class="row g-4 align-items-center">
-            <div class="col-lg-7">
-              <div class="toolkit-eyebrow text-info mb-3">Cookbook / System Reference</div>
-              <h1 class="section-title text-white mb-3">Component Cookbook</h1>
-              <p class="section-copy mb-4">The rebuilt cookbook starts from the shared color system, then shows how surfaces, controls, feedback, and disclosure patterns inherit those same semantic pairs.</p>
-              <div class="cookbook-nav">
-                <a class="toolkit-chip" href="#palette">Color Patterns</a>
-                <a class="toolkit-chip" href="#surfaces">Surfaces</a>
-                <a class="toolkit-chip" href="#controls">Controls</a>
-                <a class="toolkit-chip" href="#feedback">Feedback</a>
-                <a class="toolkit-chip" href="#disclosure">Disclosure</a>
-                <a class="toolkit-chip" href="#motion">Motion</a>
-              </div>
+  <main class="page-section">
+    <div class="container">
+      <section class="gs-shell p-4 p-lg-5 mb-4" data-animate>
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-7">
+            <div class="toolkit-eyebrow text-info mb-3">Cookbook / System Reference</div>
+            <h1 class="section-title text-white mb-3">Component Cookbook</h1>
+            <p class="section-copy mb-4">The rebuilt cookbook starts from the shared color system, then shows how
+              surfaces, controls, feedback, and disclosure patterns inherit those same semantic pairs.</p>
+            <div class="cookbook-nav">
+              <a class="toolkit-chip" href="#palette">Color Patterns</a>
+              <a class="toolkit-chip" href="#surfaces">Surfaces</a>
+              <a class="toolkit-chip" href="#controls">Controls</a>
+              <a class="toolkit-chip" href="#feedback">Feedback</a>
+              <a class="toolkit-chip" href="#disclosure">Disclosure</a>
+              <a class="toolkit-chip" href="#motion">Motion</a>
             </div>
-            <div class="col-lg-5">
-              <div class="toolkit-banner p-3 interactive">
-                <img src="./assets/images/watch.png" alt="Toolkit reference watch artwork" class="showcase-shot">
+          </div>
+          <div class="col-lg-5">
+            <div class="toolkit-banner p-3 interactive">
+              <img src="./assets/images/watch.png" alt="Toolkit reference watch artwork" class="showcase-shot">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cookbook-section toolkit-frame p-4 p-lg-5" id="palette" data-animate>
+        <div class="d-flex flex-column flex-lg-row justify-content-between gap-3 mb-4">
+          <div>
+            <div class="toolkit-eyebrow text-info mb-2">01</div>
+            <h2 class="section-title text-white mb-2">Color Patterns</h2>
+            <p class="section-copy mb-0">Every semantic tone is defined as a foreground/background pair. These swatches
+              are the source of truth for buttons, chips, alerts, and dark code surfaces.</p>
+          </div>
+          <div class="lcd-panel p-4">
+            <div class="lcd-label mb-2">Toolkit State</div>
+            <div class="lcd-time" data-role="clock">00:00:00</div>
+            <div class="small mt-2">Semantic tones stay consistent across the toolkit.</div>
+          </div>
+        </div>
+
+        <div class="palette-grid mb-4">
+          <div class="palette-card toolkit-frame p-3">
+            <div class="palette-chip mb-3" data-tone="primary">Primary</div>
+            <div class="pattern-meta"><code>card-ink / card-background</code></div>
+          </div>
+          <div class="palette-card toolkit-frame p-3">
+            <div class="palette-chip mb-3" data-tone="secondary">Secondary</div>
+            <div class="pattern-meta"><code>ink / background</code></div>
+          </div>
+          <div class="palette-card toolkit-frame p-3">
+            <div class="palette-chip mb-3" data-tone="success">Success</div>
+            <div class="pattern-meta"><code>ink / success</code></div>
+          </div>
+          <div class="palette-card toolkit-frame p-3">
+            <div class="palette-chip mb-3" data-tone="info">Info</div>
+            <div class="pattern-meta"><code>ink / info</code></div>
+          </div>
+          <div class="palette-card toolkit-frame p-3">
+            <div class="palette-chip mb-3" data-tone="warning">Warning</div>
+            <div class="pattern-meta"><code>ink / warning</code></div>
+          </div>
+          <div class="palette-card toolkit-frame p-3">
+            <div class="palette-chip mb-3" data-tone="danger">Danger</div>
+            <div class="pattern-meta"><code>ink / danger</code></div>
+          </div>
+          <div class="palette-card toolkit-frame p-3">
+            <div class="palette-chip mb-3" data-tone="dark">Dark</div>
+            <div class="pattern-meta"><code>background / ink</code></div>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <div class="pattern-row">
+              <div class="pattern-sample" style="--sample-bg: var(--gs-primary-bg); --sample-fg: var(--gs-primary-fg);">
+                <div class="toolkit-eyebrow mb-2">Primary Pattern</div>
+                <strong>Panel-led surfaces</strong><br>
+                LCD displays, primary CTAs, active disclosure states
+              </div>
+              <div class="pattern-sample"
+                style="--sample-bg: var(--gs-secondary-bg); --sample-fg: var(--gs-secondary-fg);">
+                <div class="toolkit-eyebrow mb-2">Secondary Pattern</div>
+                <strong>Base operating tone</strong><br>
+                Inputs, secondary buttons, neutral status blocks
               </div>
             </div>
           </div>
-        </section>
-
-        <section class="cookbook-section toolkit-frame p-4 p-lg-5" id="palette" data-animate>
-          <div class="d-flex flex-column flex-lg-row justify-content-between gap-3 mb-4">
-            <div>
-              <div class="toolkit-eyebrow text-info mb-2">01</div>
-              <h2 class="section-title text-white mb-2">Color Patterns</h2>
-              <p class="section-copy mb-0">Every semantic tone is defined as a foreground/background pair. These swatches are the source of truth for buttons, chips, alerts, and dark code surfaces.</p>
-            </div>
-            <div class="lcd-panel p-4">
-              <div class="lcd-label mb-2">Toolkit State</div>
-              <div class="lcd-time" data-role="clock">00:00:00</div>
-              <div class="small mt-2">Semantic tones stay consistent across the toolkit.</div>
-            </div>
-          </div>
-
-          <div class="palette-grid mb-4">
-            <div class="palette-card toolkit-frame p-3">
-              <div class="palette-chip mb-3" data-tone="primary">Primary</div>
-              <div class="pattern-meta"><code>card-ink / card-background</code></div>
-            </div>
-            <div class="palette-card toolkit-frame p-3">
-              <div class="palette-chip mb-3" data-tone="secondary">Secondary</div>
-              <div class="pattern-meta"><code>ink / background</code></div>
-            </div>
-            <div class="palette-card toolkit-frame p-3">
-              <div class="palette-chip mb-3" data-tone="success">Success</div>
-              <div class="pattern-meta"><code>ink / success</code></div>
-            </div>
-            <div class="palette-card toolkit-frame p-3">
-              <div class="palette-chip mb-3" data-tone="info">Info</div>
-              <div class="pattern-meta"><code>ink / info</code></div>
-            </div>
-            <div class="palette-card toolkit-frame p-3">
-              <div class="palette-chip mb-3" data-tone="warning">Warning</div>
-              <div class="pattern-meta"><code>ink / warning</code></div>
-            </div>
-            <div class="palette-card toolkit-frame p-3">
-              <div class="palette-chip mb-3" data-tone="danger">Danger</div>
-              <div class="pattern-meta"><code>ink / danger</code></div>
-            </div>
-            <div class="palette-card toolkit-frame p-3">
-              <div class="palette-chip mb-3" data-tone="dark">Dark</div>
-              <div class="pattern-meta"><code>background / ink</code></div>
-            </div>
-          </div>
-
-          <div class="row g-4">
-            <div class="col-lg-6">
-              <div class="pattern-row">
-                <div class="pattern-sample" style="--sample-bg: var(--gs-primary-bg); --sample-fg: var(--gs-primary-fg);">
-                  <div class="toolkit-eyebrow mb-2">Primary Pattern</div>
-                  <strong>Panel-led surfaces</strong><br>
-                  LCD displays, primary CTAs, active disclosure states
-                </div>
-                <div class="pattern-sample" style="--sample-bg: var(--gs-secondary-bg); --sample-fg: var(--gs-secondary-fg);">
-                  <div class="toolkit-eyebrow mb-2">Secondary Pattern</div>
-                  <strong>Base operating tone</strong><br>
-                  Inputs, secondary buttons, neutral status blocks
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="toolkit-code h-100">
-                <pre>:root {
+          <div class="col-lg-6">
+            <div class="toolkit-code h-100">
+              <pre>:root {
   --gs-primary-fg: var(--gs-panel-ink);
   --gs-primary-bg: var(--gs-panel);
   --gs-secondary-fg: var(--gs-ink);
@@ -125,40 +131,41 @@
   --gs-dark-fg: var(--gs-bg);
   --gs-dark-bg: var(--gs-ink);
 }</pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cookbook-section toolkit-card p-4 p-lg-5 interactive" id="surfaces" data-animate data-delay="80">
+        <div class="row g-4">
+          <div class="col-lg-5">
+            <div class="toolkit-eyebrow text-info mb-2">02</div>
+            <h2 class="h3 text-white">Surfaces</h2>
+            <p class="text-white-50">The core surface set: LCD panels, structural cards, and media frames. These provide
+              the base casing language.</p>
+            <div class="lcd-panel p-4 mt-4 mb-3">
+              <div class="d-flex justify-content-between mb-3">
+                <span class="lcd-label">Battery</span>
+                <span class="toolkit-chip">OK</span>
+              </div>
+              <div class="lcd-readout">88.4%</div>
+            </div>
+            <div class="toolkit-card soft p-4">
+              <div class="toolkit-list">
+                <div class="toolkit-list-item">
+                  <span>Link Health</span>
+                  <strong>Stable</strong>
+                </div>
+                <div class="toolkit-list-item">
+                  <span>Shock Index</span>
+                  <strong>04</strong>
+                </div>
               </div>
             </div>
           </div>
-        </section>
-
-        <section class="cookbook-section toolkit-card p-4 p-lg-5 interactive" id="surfaces" data-animate data-delay="80">
-          <div class="row g-4">
-            <div class="col-lg-5">
-              <div class="toolkit-eyebrow text-info mb-2">02</div>
-              <h2 class="h3 text-white">Surfaces</h2>
-              <p class="text-white-50">The core surface set: LCD panels, structural cards, and media frames. These provide the base casing language.</p>
-              <div class="lcd-panel p-4 mt-4 mb-3">
-                <div class="d-flex justify-content-between mb-3">
-                  <span class="lcd-label">Battery</span>
-                  <span class="toolkit-chip">OK</span>
-                </div>
-                <div class="lcd-readout">88.4%</div>
-              </div>
-              <div class="toolkit-card soft p-4">
-                <div class="toolkit-list">
-                  <div class="toolkit-list-item">
-                    <span>Link Health</span>
-                    <strong>Stable</strong>
-                  </div>
-                  <div class="toolkit-list-item">
-                    <span>Shock Index</span>
-                    <strong>04</strong>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-7">
-              <div class="toolkit-code h-100">
-                <pre>&lt;div class="lcd-panel p-4"&gt;...&lt;/div&gt;
+          <div class="col-lg-7">
+            <div class="toolkit-code h-100">
+              <pre>&lt;div class="lcd-panel p-4"&gt;...&lt;/div&gt;
 
 &lt;div class="toolkit-card soft p-4"&gt;
   &lt;div class="toolkit-list"&gt;
@@ -169,57 +176,58 @@
 &lt;div class="toolkit-banner p-3"&gt;
   &lt;img src="./assets/images/watch.png" class="showcase-shot" alt=""&gt;
 &lt;/div&gt;</pre>
-              </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section class="cookbook-section toolkit-card p-4 p-lg-5 interactive" id="controls" data-animate data-delay="120">
-          <div class="row g-4">
-            <div class="col-lg-5">
-              <div class="toolkit-eyebrow text-info mb-2">03</div>
-              <h2 class="h3 text-white">Controls</h2>
-              <p class="text-white-50">Primary and secondary actions are direct expressions of the semantic palette. Inputs stay secondary until focused.</p>
-              <div class="d-flex flex-wrap gap-3 mt-4 mb-4">
-                <button class="btn toolkit-button toolkit-button-primary interactive">Primary</button>
-                <button class="btn toolkit-button toolkit-button-secondary interactive">Secondary</button>
-                <span class="toolkit-chip">Signal</span>
+      <section class="cookbook-section toolkit-card p-4 p-lg-5 interactive" id="controls" data-animate data-delay="120">
+        <div class="row g-4">
+          <div class="col-lg-5">
+            <div class="toolkit-eyebrow text-info mb-2">03</div>
+            <h2 class="h3 text-white">Controls</h2>
+            <p class="text-white-50">Primary and secondary actions are direct expressions of the semantic palette.
+              Inputs stay secondary until focused.</p>
+            <div class="d-flex flex-wrap gap-3 mt-4 mb-4">
+              <button class="btn toolkit-button toolkit-button-primary interactive">Primary</button>
+              <button class="btn toolkit-button toolkit-button-secondary interactive">Secondary</button>
+              <span class="toolkit-chip">Signal</span>
+            </div>
+            <div class="d-flex flex-wrap gap-3 mb-4">
+              <div>
+                <input class="toolkit-toggle" id="toggle-demo-on" type="checkbox" checked>
+                <label class="toolkit-toggle-ui toolkit-toggle-ui-lg" for="toggle-demo-on">
+                  <span class="toggle-off">Off</span>
+                  <span class="toggle-on">On</span>
+                </label>
               </div>
-              <div class="d-flex flex-wrap gap-3 mb-4">
-                <div>
-                  <input class="toolkit-toggle" id="toggle-demo-on" type="checkbox" checked>
-                  <label class="toolkit-toggle-ui toolkit-toggle-ui-lg" for="toggle-demo-on">
-                    <span class="toggle-off">Off</span>
-                    <span class="toggle-on">On</span>
-                  </label>
-                </div>
-                <div>
-                  <input class="toolkit-toggle" id="toggle-demo-off" type="checkbox">
-                  <label class="toolkit-toggle-ui" for="toggle-demo-off">
-                    <span class="toggle-off">Off</span>
-                    <span class="toggle-on">On</span>
-                  </label>
-                </div>
-                <div>
-                  <input class="toolkit-toggle" id="toggle-demo-sm" type="checkbox">
-                  <label class="toolkit-toggle-ui toolkit-toggle-ui-sm" for="toggle-demo-sm">
-                    <span class="toggle-off">Off</span>
-                    <span class="toggle-on">On</span>
-                  </label>
-                </div>
+              <div>
+                <input class="toolkit-toggle" id="toggle-demo-off" type="checkbox">
+                <label class="toolkit-toggle-ui" for="toggle-demo-off">
+                  <span class="toggle-off">Off</span>
+                  <span class="toggle-on">On</span>
+                </label>
               </div>
-              <div class="vstack gap-3">
-                <input class="form-control toolkit-input" placeholder="Enter command frequency">
-                <select class="form-select toolkit-input">
-                  <option>Telemetry</option>
-                  <option>Clock</option>
-                  <option>Alarm</option>
-                </select>
+              <div>
+                <input class="toolkit-toggle" id="toggle-demo-sm" type="checkbox">
+                <label class="toolkit-toggle-ui toolkit-toggle-ui-sm" for="toggle-demo-sm">
+                  <span class="toggle-off">Off</span>
+                  <span class="toggle-on">On</span>
+                </label>
               </div>
             </div>
-            <div class="col-lg-7">
-              <div class="toolkit-code h-100">
-                <pre>&lt;button class="btn toolkit-button toolkit-button-primary"&gt;Primary&lt;/button&gt;
+            <div class="vstack gap-3">
+              <input class="form-control toolkit-input" placeholder="Enter command frequency">
+              <select class="form-select toolkit-input">
+                <option>Telemetry</option>
+                <option>Clock</option>
+                <option>Alarm</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <div class="toolkit-code h-100">
+              <pre>&lt;button class="btn toolkit-button toolkit-button-primary"&gt;Primary&lt;/button&gt;
 &lt;button class="btn toolkit-button toolkit-button-secondary"&gt;Secondary&lt;/button&gt;
 &lt;span class="toolkit-chip"&gt;Signal&lt;/span&gt;
 
@@ -243,36 +251,38 @@
 
 &lt;input class="form-control toolkit-input" placeholder="Enter command frequency"&gt;
 &lt;select class="form-select toolkit-input"&gt;...&lt;/select&gt;</pre>
-              </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section class="cookbook-section toolkit-card p-4 p-lg-5 interactive" id="feedback" data-animate data-delay="160">
-          <div class="row g-4">
-            <div class="col-lg-5">
-              <div class="toolkit-eyebrow text-info mb-2">04</div>
-              <h2 class="h3 text-white">Feedback</h2>
-              <p class="text-white-50">Segmented meter, directional triangle process, and semantic alerts for runtime status.</p>
-              <div class="toolkit-meter mt-4 mb-4"><span style="--value: 70%;"></span></div>
-              <div class="triangle-progress mb-2" aria-label="5 step progress indicator">
-                <span class="triangle-progress-step is-active"></span>
-                <span class="triangle-progress-step is-active"></span>
-                <span class="triangle-progress-step is-active"></span>
-                <span class="triangle-progress-step"></span>
-                <span class="triangle-progress-step"></span>
-              </div>
-              <div class="small text-white-50 mb-4">Each triangle equals 20% progress.</div>
-              <div class="vstack gap-3">
-                <div class="toolkit-alert" data-tone="success"><strong>Success</strong><br>Relay synced and stable.</div>
-                <div class="toolkit-alert" data-tone="info"><strong>Info</strong><br>Scan in progress.</div>
-                <div class="toolkit-alert" data-tone="warning"><strong>Warning</strong><br>High luminance recommended.</div>
-                <div class="toolkit-alert" data-tone="danger"><strong>Danger</strong><br>Impact threshold exceeded.</div>
-              </div>
+      <section class="cookbook-section toolkit-card p-4 p-lg-5 interactive" id="feedback" data-animate data-delay="160">
+        <div class="row g-4">
+          <div class="col-lg-5">
+            <div class="toolkit-eyebrow text-info mb-2">04</div>
+            <h2 class="h3 text-white">Feedback</h2>
+            <p class="text-white-50">Segmented meter, directional triangle process, and semantic alerts for runtime
+              status.</p>
+            <div class="toolkit-meter mt-4 mb-4"><span style="--value: 70%;"></span></div>
+            <div class="triangle-progress mb-2" aria-label="5 step progress indicator">
+              <span class="triangle-progress-step is-active"></span>
+              <span class="triangle-progress-step is-active"></span>
+              <span class="triangle-progress-step is-active"></span>
+              <span class="triangle-progress-step"></span>
+              <span class="triangle-progress-step"></span>
             </div>
-            <div class="col-lg-7">
-              <div class="toolkit-code h-100">
-                <pre>&lt;div class="toolkit-meter"&gt;
+            <div class="small text-white-50 mb-4">Each triangle equals 20% progress.</div>
+            <div class="vstack gap-3">
+              <div class="toolkit-alert" data-tone="success"><strong>Success</strong><br>Relay synced and stable.</div>
+              <div class="toolkit-alert" data-tone="info"><strong>Info</strong><br>Scan in progress.</div>
+              <div class="toolkit-alert" data-tone="warning"><strong>Warning</strong><br>High luminance recommended.
+              </div>
+              <div class="toolkit-alert" data-tone="danger"><strong>Danger</strong><br>Impact threshold exceeded.</div>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <div class="toolkit-code h-100">
+              <pre>&lt;div class="toolkit-meter"&gt;
   &lt;span style="--value: 70%;"&gt;&lt;/span&gt;
 &lt;/div&gt;
 
@@ -281,47 +291,51 @@
 &lt;div class="toolkit-alert" data-tone="warning"&gt;
   &lt;strong&gt;Warning&lt;/strong&gt;
 &lt;/div&gt;</pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cookbook-section toolkit-card p-4 p-lg-5 interactive" id="disclosure" data-animate
+        data-delay="200">
+        <div class="row g-4">
+          <div class="col-lg-5">
+            <div class="toolkit-eyebrow text-info mb-2">05</div>
+            <h2 class="h3 text-white">Disclosure</h2>
+            <p class="text-white-50">The accordion uses rubber for collapsed items and the primary pair for the active
+              item, with the metal control rotating from plus to close.</p>
+            <div class="accordion toolkit-accordion mt-4" id="toolkitAccordionDemo">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#accordionOne" aria-expanded="true" aria-controls="accordionOne">
+                    Power Reserve
+                  </button>
+                </h2>
+                <div id="accordionOne" class="accordion-collapse collapse show" data-bs-parent="#toolkitAccordionDemo">
+                  <div class="accordion-body">
+                    Reserve mode is stable for 84 hours with radio sync and sensor sweep enabled.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#accordionTwo" aria-expanded="false" aria-controls="accordionTwo">
+                    Shock Monitor
+                  </button>
+                </h2>
+                <div id="accordionTwo" class="accordion-collapse collapse" data-bs-parent="#toolkitAccordionDemo">
+                  <div class="accordion-body">
+                    Impact telemetry remains within tolerance. Automatic scan escalation is available on trigger.
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </section>
-
-        <section class="cookbook-section toolkit-card p-4 p-lg-5 interactive" id="disclosure" data-animate data-delay="200">
-          <div class="row g-4">
-            <div class="col-lg-5">
-              <div class="toolkit-eyebrow text-info mb-2">05</div>
-              <h2 class="h3 text-white">Disclosure</h2>
-              <p class="text-white-50">The accordion uses rubber for collapsed items and the primary pair for the active item, with the metal control rotating from plus to close.</p>
-              <div class="accordion toolkit-accordion mt-4" id="toolkitAccordionDemo">
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#accordionOne" aria-expanded="true" aria-controls="accordionOne">
-                      Power Reserve
-                    </button>
-                  </h2>
-                  <div id="accordionOne" class="accordion-collapse collapse show" data-bs-parent="#toolkitAccordionDemo">
-                    <div class="accordion-body">
-                      Reserve mode is stable for 84 hours with radio sync and sensor sweep enabled.
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionTwo" aria-expanded="false" aria-controls="accordionTwo">
-                      Shock Monitor
-                    </button>
-                  </h2>
-                  <div id="accordionTwo" class="accordion-collapse collapse" data-bs-parent="#toolkitAccordionDemo">
-                    <div class="accordion-body">
-                      Impact telemetry remains within tolerance. Automatic scan escalation is available on trigger.
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-7">
-              <div class="toolkit-code h-100">
-                <pre>&lt;div class="accordion toolkit-accordion" id="toolkitAccordionDemo"&gt;
+          <div class="col-lg-7">
+            <div class="toolkit-code h-100">
+              <pre>&lt;div class="accordion toolkit-accordion" id="toolkitAccordionDemo"&gt;
   &lt;div class="accordion-item"&gt;
     &lt;button class="accordion-button" data-bs-toggle="collapse"&gt;
       Power Reserve
@@ -331,61 +345,75 @@
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;</pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cookbook-section toolkit-card p-4 p-lg-5 interactive" id="motion" data-animate data-delay="240">
+        <div class="row g-4">
+          <div class="col-lg-5">
+            <div class="toolkit-eyebrow text-info mb-2">06</div>
+            <h2 class="h3 text-white">Motion</h2>
+            <p class="text-white-50">Reveal-on-scroll and interactive lift/pulse are shared behaviors. Use them
+              sparingly on control surfaces.</p>
+            <div class="toolkit-frame mt-4">
+              <div class="d-flex flex-wrap gap-3">
+                <button class="btn toolkit-button toolkit-button-primary interactive" data-animate>Animated CTA</button>
+                <div class="toolkit-chip interactive" data-animate data-delay="120">Pulse Chip</div>
               </div>
             </div>
           </div>
-        </section>
-
-        <section class="cookbook-section toolkit-card p-4 p-lg-5 interactive" id="motion" data-animate data-delay="240">
-          <div class="row g-4">
-            <div class="col-lg-5">
-              <div class="toolkit-eyebrow text-info mb-2">06</div>
-              <h2 class="h3 text-white">Motion</h2>
-              <p class="text-white-50">Reveal-on-scroll and interactive lift/pulse are shared behaviors. Use them sparingly on control surfaces.</p>
-              <div class="toolkit-frame mt-4">
-                <div class="d-flex flex-wrap gap-3">
-                  <button class="btn toolkit-button toolkit-button-primary interactive" data-animate>Animated CTA</button>
-                  <div class="toolkit-chip interactive" data-animate data-delay="120">Pulse Chip</div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-7">
-              <div class="toolkit-code h-100">
-                <pre>&lt;button
+          <div class="col-lg-7">
+            <div class="toolkit-code h-100">
+              <pre>&lt;button
   class="btn toolkit-button toolkit-button-primary interactive"
   data-animate
   data-delay="120"&gt;
   Animated CTA
 &lt;/button&gt;</pre>
-              </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section class="cookbook-section toolkit-frame p-4 p-lg-5" data-animate data-delay="280">
-          <div class="row g-4 align-items-center">
-            <div class="col-lg-7">
-              <div class="toolkit-eyebrow text-info mb-2">Required Includes</div>
-              <h2 class="section-title text-white mb-3">Load Order</h2>
-              <div class="toolkit-code">
-                <pre>&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+      <section class="cookbook-section toolkit-frame p-4 p-lg-5" data-animate data-delay="280">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-7">
+            <div class="toolkit-eyebrow text-info mb-2">Required Includes</div>
+            <h2 class="section-title text-white mb-3">Load Order</h2>
+            <div class="toolkit-code">
+              <pre>&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
 &lt;link href="./assets/css/toolkit.css" rel="stylesheet"&gt;
 
 &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"&gt;&lt;/script&gt;
 &lt;script src="./assets/js/toolkit.js"&gt;&lt;/script&gt;</pre>
-              </div>
-            </div>
-            <div class="col-lg-5">
-              <a class="btn toolkit-button toolkit-button-primary interactive w-100 mb-3" href="./index.html">Return To Showcase</a>
-              <a class="btn toolkit-button toolkit-button-secondary interactive w-100" href="https://getbootstrap.com/docs/5.3/getting-started/introduction/" target="_blank" rel="noreferrer">Bootstrap Docs</a>
             </div>
           </div>
-        </section>
-      </div>
-    </main>
+          <div class="col-lg-5">
+            <a class="btn toolkit-button toolkit-button-primary interactive w-100 mb-3" href="./index.html">Return To
+              Showcase</a>
+            <a class="btn toolkit-button toolkit-button-secondary interactive w-100"
+              href="https://getbootstrap.com/docs/5.3/getting-started/introduction/" target="_blank"
+              rel="noreferrer">Bootstrap Docs</a>
+          </div>
+        </div>
+      </section>
+      <p class="footer-note mt-4 mb-0">
+        <span>Copyright
+          <script>document.write(new Date().getFullYear())</script>
+        </span>
+        <a class="footer-link" href="https://badleo.com" target="_blank" rel="noreferrer">
+          <img class="footer-logo" src="https://badleo.com/badleo.svg" alt="BadLeo" />
+          <span>BadLeo.com</span>
+        </a>
+      </p>
+    </div>
+  </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
-    <script src="./assets/js/toolkit.js"></script>
-  </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
+  <script src="./assets/js/toolkit.js"></script>
+</body>
+
 </html>

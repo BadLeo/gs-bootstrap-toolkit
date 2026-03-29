@@ -34,35 +34,6 @@ The visual system is based on rugged casing forms, LCD-style readouts, and the s
 └── index.html
 ```
 
-## Local Preview
-
-Because this is a static site, no build step is required.
-
-Open the files directly in a browser, or serve the repository locally:
-
-```bash
-python3 -m http.server 8000
-```
-
-Then visit:
-
-- `http://localhost:8000/index.html`
-- `http://localhost:8000/cookbook.html`
-
-## GitHub Publishing
-
-The repository includes a GitHub Pages workflow at `.github/workflows/deploy-pages.yml`.
-
-To publish on GitHub:
-
-1. Push the `main` branch to the `github` remote.
-2. In the repository settings, enable GitHub Pages with `GitHub Actions` as the source if it is not already enabled.
-3. The workflow will deploy the static site automatically on pushes to `main`.
-
-Expected Pages URL:
-
-`https://badleo.github.io/gs-bootstrap-toolkit/`
-
 ## Quality Expectations
 
 - Keep the site dependency-light and static-first.
