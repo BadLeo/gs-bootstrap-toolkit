@@ -18,7 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       node.classList.remove("will-animate");
       node.classList.add("is-visible");
-      node.style.opacity = "1";
       node.style.transform = "none";
       revealedNodes.add(node);
     }
@@ -34,7 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
     node.classList.add("is-visible");
 
     if (prefersReducedMotion || typeof anime === "undefined") {
-      node.style.opacity = "1";
       node.style.transform = "none";
       return;
     }
@@ -46,10 +44,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     anime({
       targets: node,
-      opacity: [0, 1],
-      translateY: [24, 0],
-      scale: [0.98, 1],
-      duration: 850,
+      translateY: [18, 0],
+      scale: [0.985, 1],
+      duration: 620,
       easing: "easeOutExpo",
       delay: effectiveDelay
     });
@@ -80,6 +77,27 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
+  const forceRevealPendingNodes = () => {
+    animatedNodes.forEach((node) => {
+      if (revealedNodes.has(node)) {
+        return;
+      }
+
+      const rect = node.getBoundingClientRect();
+      const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+      const shouldBeVisible = rect.top <= viewportHeight * 1.25 || rect.bottom < 0;
+
+      if (!shouldBeVisible) {
+        return;
+      }
+
+      revealedNodes.add(node);
+      node.classList.remove("will-animate");
+      node.classList.add("is-visible");
+      node.style.transform = "none";
+    });
+  };
+
   animatedNodes.forEach(prepareNode);
 
   if ("IntersectionObserver" in window) {
@@ -99,8 +117,13 @@ document.addEventListener("DOMContentLoaded", () => {
     revealVisibleNodes();
 
     let ticking = false;
+    let settleTimer = null;
     const onScroll = () => {
       if (ticking) {
+        if (settleTimer) {
+          window.clearTimeout(settleTimer);
+        }
+        settleTimer = window.setTimeout(forceRevealPendingNodes, 120);
         return;
       }
 
@@ -109,6 +132,11 @@ document.addEventListener("DOMContentLoaded", () => {
         revealVisibleNodes();
         ticking = false;
       });
+
+      if (settleTimer) {
+        window.clearTimeout(settleTimer);
+      }
+      settleTimer = window.setTimeout(forceRevealPendingNodes, 120);
     };
 
     window.addEventListener("scroll", onScroll, { passive: true });

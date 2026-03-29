@@ -5,6 +5,24 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>G-SHOCK Frontend Toolkit Cookbook</title>
+  <meta name="description"
+    content="Component cookbook and system reference for the G-SHOCK-inspired UI toolkit, covering shared color patterns, surfaces, controls, feedback, disclosure, and motion.">
+  <link rel="canonical" href="https://badleo.github.io/gs-bootstrap-toolkit/cookbook.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="GS UI Toolkit">
+  <meta property="og:title" content="G-SHOCK Frontend Toolkit Cookbook">
+  <meta property="og:description"
+    content="Component cookbook and system reference for the G-SHOCK-inspired UI toolkit, covering shared color patterns, surfaces, controls, feedback, disclosure, and motion.">
+  <meta property="og:url" content="https://badleo.github.io/gs-bootstrap-toolkit/cookbook.html">
+  <meta property="og:image" content="https://badleo.github.io/gs-bootstrap-toolkit/assets/preview.png">
+  <meta property="og:image:alt" content="Preview of the GS UI Toolkit cookbook page">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="G-SHOCK Frontend Toolkit Cookbook">
+  <meta name="twitter:description"
+    content="Component cookbook and system reference for the G-SHOCK-inspired UI toolkit, covering shared color patterns, surfaces, controls, feedback, disclosure, and motion.">
+  <meta name="twitter:url" content="https://badleo.github.io/gs-bootstrap-toolkit/cookbook.html">
+  <meta name="twitter:image" content="https://badleo.github.io/gs-bootstrap-toolkit/assets/preview.png">
+  <meta name="twitter:image:alt" content="Preview of the GS UI Toolkit cookbook page">
   <link rel="icon"
     href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23454753'/%3E%3Crect x='12' y='16' width='40' height='32' rx='6' fill='%236BC3CF'/%3E%3Cpath d='M20 26h24M20 32h16M20 38h24' stroke='%23010504' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,10 +36,17 @@
   <nav class="navbar navbar-expand-lg sticky-top gs-nav" data-bs-theme="dark">
     <div class="container py-2">
       <a class="navbar-brand text-white gs-brand" href="./index.html">GS UI Toolkit</a>
-      <div class="navbar-nav ms-auto flex-row gap-3">
-        <a class="nav-link text-white-50" href="./index.html">Showcase</a>
-        <a class="nav-link text-white" href="./cookbook.html">Cookbook</a>
-        <a class="btn toolkit-button toolkit-button-primary ms-lg-3 interactive" href="https://github.com/BadLeo/gs-bootstrap-toolkit" target="_blank">View on GitHub</a>
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
+        data-bs-target="#nav-cookbook" aria-controls="nav-cookbook" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="nav-cookbook">
+        <div class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+          <a class="nav-link text-white-50" href="./index.html">Showcase</a>
+          <a class="nav-link text-white" href="./cookbook.html">Cookbook</a>
+          <a class="btn toolkit-button toolkit-button-primary ms-lg-3 interactive"
+            href="https://github.com/BadLeo/gs-bootstrap-toolkit" target="_blank">View on GitHub</a>
+        </div>
       </div>
     </div>
   </nav>
@@ -351,10 +376,77 @@
         </div>
       </section>
 
-      <section class="cookbook-section toolkit-card p-4 p-lg-5 interactive" id="motion" data-animate data-delay="240">
+      <section class="cookbook-section toolkit-card p-4 p-lg-5 interactive" id="data-table" data-animate
+        data-delay="240">
         <div class="row g-4">
           <div class="col-lg-5">
             <div class="toolkit-eyebrow text-info mb-2">06</div>
+            <h2 class="h3 text-white">Data Table And Pagination</h2>
+            <p class="text-white-50">Structured operational data with alternating rows, status markers, and semantic
+              pagination controls.</p>
+            <div class="toolkit-table-wrap mt-4">
+              <table class="table toolkit-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Channel</th>
+                    <th scope="col">State</th>
+                    <th scope="col">Latency</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Alpha Relay</td>
+                    <td><span class="table-status" data-tone="success">Stable</span></td>
+                    <td>18ms</td>
+                  </tr>
+                  <tr class="is-active">
+                    <td>Beta Relay</td>
+                    <td><span class="table-status" data-tone="info">Syncing</span></td>
+                    <td>41ms</td>
+                  </tr>
+                  <tr>
+                    <td>Gamma Relay</td>
+                    <td><span class="table-status" data-tone="warning">Queued</span></td>
+                    <td>72ms</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <nav aria-label="Toolkit table pages" class="mt-4">
+              <ul class="pagination toolkit-pagination mb-0">
+                <li class="page-item disabled"><span class="page-link">Prev</span></li>
+                <li class="page-item active"><span class="page-link">1</span></li>
+                <li class="page-item"><span class="page-link">2</span></li>
+                <li class="page-item"><span class="page-link">3</span></li>
+                <li class="page-item"><span class="page-link">Next</span></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="col-lg-7">
+            <div class="toolkit-code h-100">
+              <pre>&lt;div class="toolkit-table-wrap"&gt;
+  &lt;table class="table toolkit-table"&gt;
+    &lt;thead&gt;...&lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Alpha Relay&lt;/td&gt;
+        &lt;td&gt;&lt;span class="table-status" data-tone="success"&gt;Stable&lt;/span&gt;&lt;/td&gt;
+        &lt;td&gt;18ms&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;
+
+&lt;ul class="pagination toolkit-pagination"&gt;...&lt;/ul&gt;</pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cookbook-section toolkit-card p-4 p-lg-5 interactive" id="motion" data-animate data-delay="280">
+        <div class="row g-4">
+          <div class="col-lg-5">
+            <div class="toolkit-eyebrow text-info mb-2">07</div>
             <h2 class="h3 text-white">Motion</h2>
             <p class="text-white-50">Reveal-on-scroll and interactive lift/pulse are shared behaviors. Use them
               sparingly on control surfaces.</p>
@@ -378,7 +470,7 @@
         </div>
       </section>
 
-      <section class="cookbook-section toolkit-frame p-4 p-lg-5" data-animate data-delay="280">
+      <section class="cookbook-section toolkit-frame p-4 p-lg-5" data-animate data-delay="320">
         <div class="row g-4 align-items-center">
           <div class="col-lg-7">
             <div class="toolkit-eyebrow text-info mb-2">Required Includes</div>

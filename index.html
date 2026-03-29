@@ -5,6 +5,24 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>G-SHOCK Frontend Toolkit Showcase</title>
+  <meta name="description"
+    content="Static frontend showcase for a G-SHOCK-inspired UI toolkit built with Bootstrap 5 conventions, custom CSS, and lightweight JavaScript interactions.">
+  <link rel="canonical" href="https://badleo.github.io/gs-bootstrap-toolkit/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="GS UI Toolkit">
+  <meta property="og:title" content="G-SHOCK Frontend Toolkit Showcase">
+  <meta property="og:description"
+    content="Static frontend showcase for a G-SHOCK-inspired UI toolkit built with Bootstrap 5 conventions, custom CSS, and lightweight JavaScript interactions.">
+  <meta property="og:url" content="https://badleo.github.io/gs-bootstrap-toolkit/">
+  <meta property="og:image" content="https://badleo.github.io/gs-bootstrap-toolkit/assets/preview.png">
+  <meta property="og:image:alt" content="Preview of the GS UI Toolkit showcase site">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="G-SHOCK Frontend Toolkit Showcase">
+  <meta name="twitter:description"
+    content="Static frontend showcase for a G-SHOCK-inspired UI toolkit built with Bootstrap 5 conventions, custom CSS, and lightweight JavaScript interactions.">
+  <meta name="twitter:url" content="https://badleo.github.io/gs-bootstrap-toolkit/">
+  <meta name="twitter:image" content="https://badleo.github.io/gs-bootstrap-toolkit/assets/preview.png">
+  <meta name="twitter:image:alt" content="Preview of the GS UI Toolkit showcase site">
   <link rel="icon"
     href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23454753'/%3E%3Crect x='12' y='16' width='40' height='32' rx='6' fill='%236BC3CF'/%3E%3Cpath d='M20 26h24M20 32h16M20 38h24' stroke='%23010504' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -54,8 +72,41 @@
               </div>
             </div>
             <div class="col-lg-5">
-              <div class="toolkit-banner p-3 p-md-4 interactive" data-animate data-delay="220">
-                <img src="./assets/images/illuminator.png" alt="G-SHOCK promotional artwork" class="showcase-shot">
+              <div class="toolkit-frame browser-mini interactive" data-animate data-delay="220">
+                <div class="browser-mini-bar">
+                  <span class="browser-dot"></span>
+                  <span class="browser-dot"></span>
+                  <span class="browser-dot"></span>
+                  <div class="browser-address">gs-ui / live-preview</div>
+                </div>
+                <div class="browser-mini-body">
+                  <div class="browser-mini-hero">
+                    <div class="toolkit-eyebrow mb-2">Live Preview</div>
+                    <div class="browser-mini-title mb-2">Toolkit Browser Surface</div>
+                    <div class="small">A compact browser shell showing the same surfaces, progress, and controls used throughout the showcase.</div>
+                  </div>
+                  <div class="browser-mini-grid">
+                    <div class="browser-mini-panel">
+                      <div class="lcd-label mb-2">Scan Feed</div>
+                      <div class="toolkit-meter mb-3"><span style="--value: 60%;"></span></div>
+                      <div class="triangle-progress" aria-label="Preview progress">
+                        <span class="triangle-progress-step is-active"></span>
+                        <span class="triangle-progress-step is-active"></span>
+                        <span class="triangle-progress-step is-active"></span>
+                        <span class="triangle-progress-step"></span>
+                        <span class="triangle-progress-step"></span>
+                      </div>
+                    </div>
+                    <div class="browser-mini-panel">
+                      <div class="browser-mini-list">
+                        <div class="browser-mini-line"></div>
+                        <div class="browser-mini-line is-short"></div>
+                        <div class="browser-mini-line"></div>
+                        <div class="browser-mini-line is-short"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -194,10 +245,10 @@
             </div>
           </div>
 
-          <div class="col-lg-5" data-animate data-delay="120">
-            <div class="toolkit-card p-4 h-100 interactive">
-              <div class="toolkit-eyebrow text-info mb-3">State Logic</div>
-              <h2 class="h3 text-white">Controls And Disclosure</h2>
+            <div class="col-lg-5" data-animate data-delay="120">
+              <div class="toolkit-card p-4 h-100 interactive">
+                <div class="toolkit-eyebrow text-info mb-3">State Logic</div>
+                <h2 class="h3 text-white">Controls And Disclosure</h2>
               <p class="text-white-50">The updated showcase now reflects the cookbook control set: checkbox toggles,
                 semantic alerts, and the active/inactive accordion treatment.</p>
               <div class="toolkit-divider my-4"></div>
@@ -217,7 +268,7 @@
                   </label>
                 </div>
               </div>
-              <div class="accordion toolkit-accordion" id="showcaseAccordion">
+                <div class="accordion toolkit-accordion" id="showcaseAccordion">
                 <div class="accordion-item">
                   <h2 class="accordion-header">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse"
@@ -245,13 +296,14 @@
                       Disclosure follows the same semantic structure as buttons, chips, and alerts.
                     </div>
                   </div>
+                  </div>
                 </div>
+                <a class="btn toolkit-button toolkit-button-secondary interactive mt-4" href="./cookbook.html#controls">Inspect Controls</a>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
     <section class="page-section compact">
       <div class="container">
@@ -269,25 +321,54 @@
           </div>
           <div class="col-lg-8" data-animate data-delay="100">
             <div class="toolkit-frame p-4 p-lg-5 h-100">
-              <div class="row g-4 align-items-center">
-                <div class="col-lg-7">
-                  <div class="toolkit-eyebrow text-info mb-2">Production Use</div>
-                  <h2 class="section-title text-white mb-3">Showcase Ready, Cookbook Ready</h2>
-                  <p class="section-copy mb-0">The showcase now mirrors the rebuilt cookbook: color patterns lead the
-                    system, controls share the same semantic rules, and feedback surfaces stay visually consistent.</p>
+              <div class="row g-4">
+                <div class="col-lg-6">
+                  <div class="toolkit-eyebrow text-info mb-2">Data View</div>
+                  <h2 class="section-title text-white mb-3">Tables And Pagination</h2>
+                  <div class="toolkit-table-wrap mb-4">
+                    <table class="table toolkit-table">
+                      <thead>
+                        <tr>
+                          <th>Channel</th>
+                          <th>State</th>
+                          <th>Latency</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Alpha Relay</td>
+                          <td><span class="table-status" data-tone="success">Stable</span></td>
+                          <td>18ms</td>
+                        </tr>
+                        <tr class="is-active">
+                          <td>Beta Relay</td>
+                          <td><span class="table-status" data-tone="info">Syncing</span></td>
+                          <td>41ms</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <ul class="pagination toolkit-pagination mb-0">
+                    <li class="page-item disabled"><span class="page-link">Prev</span></li>
+                    <li class="page-item active"><span class="page-link">1</span></li>
+                    <li class="page-item"><span class="page-link">2</span></li>
+                    <li class="page-item"><span class="page-link">3</span></li>
+                  </ul>
                 </div>
-                <div class="col-lg-5">
-                  <div class="d-flex flex-wrap gap-3 justify-content-lg-end">
-                    <a class="btn toolkit-button toolkit-button-primary interactive" href="./cookbook.html#palette">Open
-                      Color Patterns</a>
-                    <a class="btn toolkit-button toolkit-button-secondary interactive" href="./cookbook.html">Open
-                      Cookbook</a>
+                <div class="col-lg-6 d-flex flex-column justify-content-between">
+                  <div>
+                    <div class="toolkit-eyebrow text-info mb-2">Production Use</div>
+                    <h2 class="section-title text-white mb-3">Showcase Ready, Cookbook Ready</h2>
+                    <p class="section-copy mb-0">The showcase now mirrors the rebuilt cookbook: color patterns lead the system, controls share the same semantic rules, and feedback surfaces stay visually consistent.</p>
+                  </div>
+                  <div class="d-flex flex-wrap gap-3 mt-4">
+                    <a class="btn toolkit-button toolkit-button-primary interactive" href="./cookbook.html#palette">Open Color Patterns</a>
+                    <a class="btn toolkit-button toolkit-button-secondary interactive" href="./cookbook.html#data-table">Open Data Table</a>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
         <p class="footer-note mt-4 mb-0">
           <span>Copyright
             <script>document.write(new Date().getFullYear())</script>
