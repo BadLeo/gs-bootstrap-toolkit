@@ -1178,6 +1178,12 @@ body.gs-body {
   }
 }
 
+@media (max-width: 767.98px) {
+  .browser-mini {
+    display: none;
+  }
+}
+
 @media (max-width: 575.98px) {
   :root {
     --gs-chamfer: 14px;
