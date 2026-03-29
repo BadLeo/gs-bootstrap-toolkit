@@ -2,6 +2,9 @@
 
 Static frontend showcase and cookbook for a G-SHOCK-inspired UI toolkit built with Bootstrap 5 conventions, custom CSS, and lightweight JavaScript interactions.
 
+## Live Demo
+[https://badleo.github.io/gs-bootstrap-toolkit/](https://badleo.github.io/gs-bootstrap-toolkit/)
+
 ## Overview
 
 This repository contains a publish-ready static site with two primary entry points:
