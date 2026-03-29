@@ -1,0 +1,25 @@
+name: Feature request
+description: Suggest an enhancement for the toolkit or repository workflow.
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or opportunity
+      description: What need is not currently served?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: Describe the component, workflow, or documentation change you want.
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: Expected impact
+      description: Explain who benefits and how this improves the project.
